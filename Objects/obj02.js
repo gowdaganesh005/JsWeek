@@ -58,3 +58,16 @@ console.log(Object.entries(user))
 
 console.log(user.hasOwnProperty('id'))
 
+// destructure of objects
+
+let obj6={
+    name:"gold",
+    version:"1.0",
+    salesman_name:"rahul"
+
+}
+
+const {salesman_name: saleman}=obj6
+
+console.log(saleman)
+
