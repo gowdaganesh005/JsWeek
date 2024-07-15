@@ -36,8 +36,11 @@ add2(6)
 
 // another syntax for arrow function is 
 
+
+//explicitly returning function
 const add00=(num1,num2)=>{return num1+num2} //if {} is used we need to write return keyword
 
+/// implicitly return function
 const add01=(num1,num2)=> num1+num2    // here the js just understand that only that is to be returned do no need to write keyword return and omit it
 
 const add02=(num1,num2)=> (num1+num2)    // here the () canbe  used and no need to use return keyword 
