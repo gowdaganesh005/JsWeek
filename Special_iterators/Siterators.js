@@ -60,3 +60,27 @@ function printme(item){
     console.log(item);
 }
 arr.forEach(printme)        // we can declare function ooutside the for each function and pass the reference to the function and not the fuction
+
+
+// for each method doesnt returns anything
+
+let values=arr.forEach( (item)=>item)     
+
+console.log(values)     //undefined 
+
+// if we want it compulsarily then
+
+let values2=[]
+arr.forEach((item)=>{
+    values2.push(item)
+})
+
+console.log(values2)  
+
+// or we can use filter
+
+let values3=arr.filter((item)=>item)
+console.log(values3);
+
+
+
