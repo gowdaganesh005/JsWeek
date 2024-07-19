@@ -21,3 +21,35 @@ buttons.forEach(function (button) {
 });
 
 ```
+
+project 2
+```javascript
+const form = document.querySelector('form');
+// console.log(form);
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  // console.log(e)
+  // console.log(e.target)
+  const height = parseInt(form.querySelector('#height').value);
+  // console.log(height)
+  const weight = parseInt(form.querySelector('#weight').value);
+  // console.log(weight)
+  const results = document.querySelector('#results');
+  console.log(results);
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    results.innerHTML = `Please enter a valid height ${height}`;
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = `Please enter a valid weight ${weight}`;
+  } else {
+    const bmi = ((weight * 10000) / (height * height)).toFixed(2);
+    let msg = '';
+    if (bmi < 18.6) msg = 'Under Weight';
+    else if (bmi > 24.9) msg = 'Over weight';
+    else msg = 'normal weight';
+    results.innerHTML = `<span>BMI : ${bmi} ${msg}</span>`;
+  }
+});
+```
+
+
