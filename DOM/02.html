@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM </title>
+</head>
+<body style="background:  #212121; color:white">
+
+    <div class="language">
+        <li>Javascript</li>
+    </div>
+</body>
+<script>
+    function addli(langname){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addli("golang")
+    addli("python")
+
+    //edit
+
+    let  li=document.querySelector('li:nth-child(2)')
+    const newli=document.createElement('li')
+    newli.appendChild(document.createTextNode("Java"))
+    li.replaceWith(newli)
+
+    li=document.querySelector('li:nth-child(3)')
+    li.outerHTML="<li>TypeScript</li>"
+
+    li=document.querySelector('li:nth-child(2)')
+    li.remove()
+
+
+
+</script>
+</html>
