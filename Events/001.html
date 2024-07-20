@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+<style>
+    .img{
+        width: 100px;
+        background-color: #d40c0c;
+        padding: 10px;
+    }
+</style>
+<body style="background-color:#212121 ; color:aliceblue">
+    <div class="parent">
+        <li class="japan"><div class="img">japan</div></li>
+        <li class="europe"><div class="img"></div>>Europe</div></li>
+        <li class="india"><div class="img"></div>>India</div></li>
+    </div>
+</body>
+<script>
+    //javascipt is a sequnetally eecuted language but the there are instructions that are eent driven
+    const japan=document.getElementsByClassName('japan')
+//     japan[0].onclick=function(){
+//         alert('japan')
+//     }
+//     console.log(japan)
+
+    japan=japan[0]
+    document.querySelector('.japan').addEventListener('click',function(e){
+        alert('japan is clicked')
+    },false)
+ </script>
+</html>
