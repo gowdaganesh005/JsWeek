@@ -15,21 +15,98 @@
 <body style="background-color:#212121 ; color:aliceblue">
     <div class="parent">
         <li class="japan"><div class="img">japan</div></li>
-        <li class="europe"><div class="img"></div>>Europe</div></li>
-        <li class="india"><div class="img"></div>>India</div></li>
+        <li class="europe"><div class="img">Europe</div></li>
+        <li class="india"><div class="img">India</div></li>
+        <li class="google">google</li>
     </div>
 </body>
 <script>
     //javascipt is a sequnetally eecuted language but the there are instructions that are eent driven
-    const japan=document.getElementsByClassName('japan')
+    let japan=document.getElementsByClassName('japan')
 //     japan[0].onclick=function(){
 //         alert('japan')
 //     }
 //     console.log(japan)
 
     japan=japan[0]
-    document.querySelector('.japan').addEventListener('click',function(e){
-        alert('japan is clicked')
-    },false)
+
+    //Bubbling propogation  inside elment event function is executed first 
+    //last parameter of the evenyt listner is false which is also default
+    // document.querySelector('.japan').addEventListener('click',function(e){
+    //    console.log('japan is clicked')
+    // },false)
+
+    // const parent=document.querySelector('.parent')
+    // // console.log(parent)
+    // parent.addEventListener('click',function(e){
+    //     // console.log(e)
+    //     console.log('parent div is clicked')
+    // },false)
+
+   
+    // Capturing mode propgation the last param is true of the parent element  
+    // outside in the oueter event function is executed first
+
+
+    // document.querySelector('.japan').addEventListener('click',function(e){
+    //    console.log('japan is clicked')
+    // },false)
+
+    // const parent=document.querySelector('.parent')
+    // // console.log(parent)
+    // parent.addEventListener('click',function(e){
+    //     // console.log(e)
+    //     console.log('parent div is clicked')
+    // },true)
+
+    // to stop propogation
+    // document.querySelector('.japan').addEventListener('click',function(e){
+    //    console.log('japan is clicked')
+    //    e.stopPropagation()
+    // },false)
+
+    // const parent=document.querySelector('.parent')
+    // // console.log(parent)
+    // parent.addEventListener('click',function(e){
+    //     // console.log(e)
+    //     console.log('parent div is clicked')
+    //     // e.stopPropagation()
+    // },false)
+    
+    //here the propogtion mode is necessary too that it should 
+    // if the bubuling phase that is in to oout phase the event doesnt reach the parent elelment 
+    // in the capturing mode the event is first out to in then if we stop propogation in child then no use because
+    // the parent is captured then the child so the we should stop propgation in parent to prevent to go to child
+
+    document.querySelector('.google').addEventListener('click',function(e){
+        console.log("google is clicked")
+        e.preventDefault()
+
+    })
+    // to remove elmenents that is cllicked
+
+    document.querySelector('.parent').addEventListener('click',function(e){
+        //  console.log(e.target.tagName)
+        if(e.target.tagName==='DIV'){
+            const it=e.target.parentNode
+         it.remove()
+        // it.parentNode.removeChild(it)
+        console.log(it)
+
+        }
+        else{
+            e.target.remove()
+        }
+
+
+
+        
+
+    })
+
+
+
+
+    
  </script>
 </html>
