@@ -28,3 +28,27 @@ document.querySelector('#stop').addEventListener('click',function(e){
   interval=null
   })
 ```
+
+
+project 2: to detect which key is pressed using event listner
+```javascript
+window.addEventListener('keydown',function(e){
+  document.querySelector('#insert').innerHTML=
+  `<div class='color'>
+  <table>
+  <tr>
+  <th>Keyword</th>
+  <th>Keycode</th>
+  <th>code</th>
+  </tr>
+  <tr>
+  <td>${e.key==' '?"space":e.key}</td>
+  <td>${e.keyCode}</td>
+  <td>${e.code}</td>
+  </tr>
+
+  </table>
+  </div>`
+
+})
+```
